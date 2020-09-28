@@ -1,21 +1,24 @@
 import React from 'react';
 import "./Course.css";
 const Course = (props) => {
+  console.log(props);
+  const {img, title, details,price} = props.data;
   return (
     
     <div className="container">
       
     <div className="col">
       <div className="card">
-        <img src={props.img} className="card-img-top" alt="img" />
+        <img src={img} className="card-img-top" alt="img" />
         <div className="card-body">
-          <h5 className="card-title">{props.title}</h5>
+          <h5 className="card-title">{title}</h5>
           <p className="card-text">
             {
-                props.des
+                details
             }
           </p>
-          <a href="/" class="btn btn-primary">View Details</a>
+          <p>Price:${price}</p>
+          <button onClick={()=>props.handelAddCourse(props.data)}>Add Course</button>
         </div>
       </div>
     </div>

@@ -5,3 +5,6 @@
     margin-top: 33px;
 }
 
+.container-fluid{
+    display: flex;
+}
